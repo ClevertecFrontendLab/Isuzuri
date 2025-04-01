@@ -5,6 +5,7 @@ import { items } from '../../constants/sidebar';
 import SidebarItem from './SidebarItem';
 const Sidebar = () => {
     const [activeItem, setActiveItem] = useState<string>('');
+    const [activeChild, setActiveChild] = useState<string>('');
 
     return (
         <Accordion allowToggle p='10px 16px 10px 10px' bgColor='white'>
@@ -14,6 +15,8 @@ const Sidebar = () => {
                     item={item}
                     activeItem={activeItem}
                     setActiveItem={setActiveItem}
+                    activeChild={activeChild}
+                    setActiveChild={setActiveChild}
                 />
             ))}
         </Accordion>
