@@ -1,7 +1,6 @@
 :root {
-    --bg-color: #f0f0f0;
-}
-
-body {
-    background-color: var(--bg-color);
+    --lime-light: #eaffc7;
+    --lime: #c4ff61;
+    --gray: rgba(0, 0, 0, 0.24);
+    --gray-dark: rgba(0, 0, 0, 0.64);
 }

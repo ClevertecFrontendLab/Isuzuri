@@ -9,14 +9,20 @@ const SidebarItemChild = ({
     activeChild: string;
     setActiveChild: (child: string) => void;
 }) => (
-    <Box key={child} padding='6px 8px' onClick={() => setActiveChild(child)} cursor='pointer'>
+    <Box
+        key={child}
+        padding='0.375rem 0.5rem'
+        onClick={() => setActiveChild(child)}
+        cursor='pointer'
+        fontWeight={activeChild === child ? 'bold' : 'normal'}
+    >
         <Box
             as='span'
             width='0px'
-            borderLeft={activeChild === child ? '8px solid #C4FF61' : '1px solid #C4FF61'}
-            marginLeft={activeChild === child ? '24px' : '32px'}
-            marginRight='12px'
-        ></Box>
+            borderLeft={activeChild === child ? '8px solid var(--lime)' : '1px solid var(--lime)'}
+            marginLeft={activeChild === child ? '1.5rem' : '2rem'}
+            marginRight='0.75rem'
+        />
         {child}
     </Box>
 );
