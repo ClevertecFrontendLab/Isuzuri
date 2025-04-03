@@ -15,7 +15,7 @@ const SidebarItemChild = ({
             width='0px'
             borderLeft={activeChild === child ? '8px solid' : '1px solid'}
             borderColor='lime.main'
-            marginLeft={activeChild === child ? '8px' : '16px'}
+            marginLeft={activeChild === child ? '0px' : '8px'}
             marginRight='12px'
         />
         <Text as='span' fontWeight={activeChild === child ? 'bold' : 'normal'}>
