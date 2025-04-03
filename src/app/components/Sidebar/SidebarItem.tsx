@@ -28,6 +28,7 @@ const SidebarItem = ({
             p='12px 8px'
             bgColor={activeItem === item.label ? 'lime.light' : 'white'}
             cursor='pointer'
+            _hover={{ bgColor: 'lime.50' }}
         >
             <Image src={item.icon} />
             <Box as='span' flex='1' textAlign='left' margin='auto 12px'>
@@ -35,7 +36,7 @@ const SidebarItem = ({
             </Box>
             <AccordionIcon size='16px' />
         </AccordionButton>
-        <AccordionPanel>
+        <AccordionPanel p='0px'>
             {item.children.map((child: string) => (
                 <SidebarItemChild
                     key={child}
