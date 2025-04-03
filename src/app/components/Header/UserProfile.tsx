@@ -10,8 +10,8 @@ const mockUser = {
 
 const UserProfile = () => (
     <Flex gap='12px' w='432px' h='48px' alignItems='center'>
-        <Avatar src={mockUser.avatar} size='48px'></Avatar>
-        <Flex direction='column'>
+        <Avatar src={mockUser.avatar} width='48px' height='48px' />
+        <Flex direction='column' justifyContent='center'>
             <Text>{mockUser.name}</Text>
             <Text color='gray.dark'>@{mockUser.tag}</Text>
         </Flex>

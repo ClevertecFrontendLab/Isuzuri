@@ -59,6 +59,7 @@ const theme = extendTheme({
                 borderRadius: '4px',
                 padding: '2px 8px',
                 height: '24px',
+                fontWeight: '400',
             },
             variants: {
                 lime: {

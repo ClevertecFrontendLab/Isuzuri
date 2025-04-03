@@ -11,11 +11,11 @@ const Header = () => {
 
     return (
         <Flex
-            height='80px'
+            height={isDesktop ? '80px' : '64px'}
             bgColor='lime.yellow'
             alignItems='center'
             justifyContent='space-between'
-            p='16px'
+            p={isDesktop ? '16px' : '8px 20px'}
         >
             <Flex gap='128px' alignItems='center'>
                 <Logo />

@@ -32,7 +32,9 @@ const SidebarItem = ({
         >
             <Image src={item.icon} />
             <Box as='span' flex='1' textAlign='left' margin='auto 12px'>
-                <Text fontSize='16px'>{item.label}</Text>
+                <Text fontSize='16px' fontWeight={activeItem === item.label ? '700' : '500'}>
+                    {item.label}
+                </Text>
             </Box>
             <AccordionIcon size='16px' />
         </AccordionButton>

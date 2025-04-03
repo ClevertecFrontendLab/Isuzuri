@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text, useMediaQuery } from '@chakra-ui/react';
 
 import BookmarkIcon from '../../assets/icons/bookmark.svg';
 import PeoplesIcon from '../../assets/icons/peoples.svg';
@@ -18,17 +18,32 @@ const mockProfileStat = [
         count: 587,
     },
 ];
-const ProfileStat = () => (
-    <Flex alignItems='center' justifyItems='center'>
-        {mockProfileStat.map((item) => (
-            <Flex key={item.icon} p='4px 8px' gap='6px' alignItems='center' justifyItems='center'>
-                <Image src={item.icon} />
-                <Text color='lime.dark' fontSize='12px'>
-                    {item.count}
-                </Text>
-            </Flex>
-        ))}
-    </Flex>
-);
+const ProfileStat = () => {
+    const [isDesktop] = useMediaQuery('(min-width: 768px)');
+
+    return (
+        <Flex
+            alignItems='center'
+            justifyItems='center'
+            direction={isDesktop ? 'column' : 'row'}
+            gap={isDesktop ? '24px' : '0px'}
+        >
+            {mockProfileStat.map((item) => (
+                <Flex
+                    key={item.icon}
+                    p='4px 8px'
+                    gap='6px'
+                    alignItems='center'
+                    justifyItems='center'
+                >
+                    <Image src={item.icon} />
+                    <Text color='lime.dark' fontSize='12px'>
+                        {item.count}
+                    </Text>
+                </Flex>
+            ))}
+        </Flex>
+    );
+};
 
 export default ProfileStat;
