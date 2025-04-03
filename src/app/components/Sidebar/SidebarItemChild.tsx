@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 const SidebarItemChild = ({
     child,
@@ -9,21 +9,18 @@ const SidebarItemChild = ({
     activeChild: string;
     setActiveChild: (child: string) => void;
 }) => (
-    <Box
-        key={child}
-        padding='0.375rem 0.5rem'
-        onClick={() => setActiveChild(child)}
-        cursor='pointer'
-        fontWeight={activeChild === child ? 'bold' : 'normal'}
-    >
+    <Box key={child} padding='6px 8px' onClick={() => setActiveChild(child)} cursor='pointer'>
         <Box
             as='span'
             width='0px'
-            borderLeft={activeChild === child ? '8px solid var(--lime)' : '1px solid var(--lime)'}
-            marginLeft={activeChild === child ? '1.5rem' : '2rem'}
-            marginRight='0.75rem'
+            borderLeft={activeChild === child ? '8px solid' : '1px solid'}
+            borderColor='lime.main'
+            marginLeft={activeChild === child ? '8px' : '16px'}
+            marginRight='12px'
         />
-        {child}
+        <Text as='span' fontWeight={activeChild === child ? 'bold' : 'normal'}>
+            {child}
+        </Text>
     </Box>
 );
 

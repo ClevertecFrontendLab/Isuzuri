@@ -1,17 +1,17 @@
-import { Button, Image } from '@chakra-ui/react';
+import { Button, Image, Text } from '@chakra-ui/react';
 
-import LogoutIcon from '../../icons/door-out.svg';
+import LogoutIcon from '../../assets/icons/door-out.svg';
 
 const SidebarExitButton = () => (
     <Button
         variant='ghost'
-        leftIcon={<Image src={LogoutIcon} margin='0.125rem 0.375rem 0.125rem 0' />}
-        fontWeight='bold'
+        leftIcon={<Image src={LogoutIcon} margin='2px 6px 2px 0' />}
         bgColor='transparent'
         border='none'
-        fontSize='0.75rem'
     >
-        Выйти
+        <Text fontSize='12px' fontWeight='bold'>
+            Выйти
+        </Text>
     </Button>
 );
 

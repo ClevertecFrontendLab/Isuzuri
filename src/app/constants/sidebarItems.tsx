@@ -1,16 +1,16 @@
-import AppleIcon from '../icons/apple.svg';
-import BreadIcon from '../icons/bread_and_rolling_pin.svg';
-import ChildIcon from '../icons/child.svg';
-import CupIcon from '../icons/cup.svg';
-import EggplantIcon from '../icons/eggplant.svg';
-import FryingPanIcon from '../icons/frying_pan.svg';
-import GrillIcon from '../icons/grill.svg';
-import HealthyIcon from '../icons/healthy.svg';
-import InternationalFoodIcon from '../icons/international_food.svg';
-import JarIcon from '../icons/jar.svg';
-import LeafsIcon from '../icons/leafs.svg';
-import MortarIcon from '../icons/mortar_and_pestle.svg';
-import PotIcon from '../icons/pot.svg';
+import AppleIcon from '../assets/icons/apple.svg';
+import BreadIcon from '../assets/icons/bread_and_rolling_pin.svg';
+import ChildIcon from '../assets/icons/child.svg';
+import CupIcon from '../assets/icons/cup.svg';
+import EggplantIcon from '../assets/icons/eggplant.svg';
+import FryingPanIcon from '../assets/icons/frying_pan.svg';
+import GrillIcon from '../assets/icons/grill.svg';
+import HealthyIcon from '../assets/icons/healthy.svg';
+import InternationalFoodIcon from '../assets/icons/international_food.svg';
+import JarIcon from '../assets/icons/jar.svg';
+import LeafsIcon from '../assets/icons/leafs.svg';
+import MortarIcon from '../assets/icons/mortar_and_pestle.svg';
+import PotIcon from '../assets/icons/pot.svg';
 
 export const items = [
     {
@@ -56,7 +56,7 @@ export const items = [
     },
     {
         icon: BreadIcon,
-        label: 'Десерты и выпечка',
+        label: 'Десерты, выпечка',
         children: [
             'Пельмени, вареники',
             'Мучные гарниры',
@@ -87,7 +87,16 @@ export const items = [
     {
         icon: LeafsIcon,
         label: 'Веганская кухня',
-        children: ['Закуски', 'Первые блюда', 'Вторые блюда', 'Гарниры', 'Десерты', 'Выпечка'],
+        children: [
+            'Закуски',
+            'Первые блюда',
+            'Вторые блюда',
+            'Гарниры',
+            'Десерты',
+            'Выпечка',
+            'Сыроедческие блюда',
+            'Напитки',
+        ],
     },
     {
         icon: ChildIcon,

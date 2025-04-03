@@ -1,7 +1,7 @@
 import { Accordion } from '@chakra-ui/react';
 import { useState } from 'react';
 
-import { items } from '../../constants/sidebar';
+import { items } from '../../constants/sidebarItems';
 import SidebarItem from './SidebarItem';
 
 const SidebarCategories = () => {
@@ -9,12 +9,7 @@ const SidebarCategories = () => {
     const [activeChild, setActiveChild] = useState<string>('');
 
     return (
-        <Accordion
-            allowToggle
-            p='0.625rem 1rem 0.625rem 0.625rem'
-            bgColor='white'
-            overflowY='scroll'
-        >
+        <Accordion allowToggle p='10px 16px 10px 10px' overflowY='scroll'>
             {items.map((item: { icon: string; label: string; children: string[] }) => (
                 <SidebarItem
                     key={item.label}
