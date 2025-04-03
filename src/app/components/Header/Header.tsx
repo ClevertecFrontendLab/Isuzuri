@@ -1,7 +1,7 @@
 import { Flex, useMediaQuery } from '@chakra-ui/react';
 
+import Breadcrumbs from '../common/Breadcrumbs';
 import ProfileStat from '../common/ProfileStat';
-import Breadcrumbs from './Breadcrumbs';
 import Burger from './Burger';
 import Logo from './Logo';
 import UserProfile from './UserProfile';

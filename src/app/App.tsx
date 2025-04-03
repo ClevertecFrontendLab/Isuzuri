@@ -1,17 +1,25 @@
 import './App.css';
 
-import { Box, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
+import PotIcon from './assets/icons/pot.svg';
+import CustomBadge from './components/common/CustomBadge';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+
+const mockBadge = {
+    icon: PotIcon,
+    text: 'Первые блюда',
+};
 
 function App() {
     return (
         <Flex direction='column' height='100vh'>
             <Header />
-            <Box>
+            <Flex>
                 <Sidebar />
-            </Box>
+                <CustomBadge variant='lime' icon={mockBadge.icon} text={mockBadge.text} />
+            </Flex>
         </Flex>
     );
 }
