@@ -20,6 +20,7 @@ const theme = extendTheme({
         gray: {
             light: 'rgba(0, 0, 0, 0.24)',
             dark: 'rgba(0, 0, 0, 0.64)',
+            main: '#2d3748',
         },
     },
 });

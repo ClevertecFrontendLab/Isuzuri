@@ -1,5 +1,4 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
-import React from 'react';
 
 import BookmarkIcon from '../../assets/icons/bookmark.svg';
 import PeoplesIcon from '../../assets/icons/peoples.svg';

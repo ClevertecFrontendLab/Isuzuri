@@ -1,14 +1,14 @@
 import { Flex, Image, useMediaQuery } from '@chakra-ui/react';
 
-import logoImage from '../../assets/images/logo-image.png';
-import logoText from '../../assets/images/logo-text.png';
+import logoImage from '../../assets/icons/logo-image.svg';
+import logoText from '../../assets/icons/logo-text.svg';
 
 const Logo = () => {
-    const [isDesktop] = useMediaQuery('(min-width: 768px)');
+    const [isTablet] = useMediaQuery('(min-width: 768px)');
     return (
-        <Flex gap='7px'>
-            <Image src={logoImage} />
-            {isDesktop && <Image src={logoText} />}
+        <Flex gap='7px' justifyContent='center' alignItems='center'>
+            <Image src={logoImage} width='32px' />
+            {isTablet && <Image src={logoText} height='24px' />}
         </Flex>
     );
 };

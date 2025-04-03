@@ -1,17 +1,16 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
-import React from 'react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Text } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 
 const Breadcrumbs = () => (
     <Breadcrumb>
         <BreadcrumbItem>
             <BreadcrumbLink as={RouterLink} to='/'>
-                Главная
+                <Text color='gray.main'>Главная</Text>
             </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
             <BreadcrumbLink as={RouterLink} to='/vegan'>
-                Веганская кухня
+                <Text color='gray.main'>Веганская кухня</Text>
             </BreadcrumbLink>
         </BreadcrumbItem>
     </Breadcrumb>
