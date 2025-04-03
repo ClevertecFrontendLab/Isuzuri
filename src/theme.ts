@@ -37,7 +37,7 @@ const theme = extendTheme({
                 scrollbarColor: 'blackAlpha.300 blackAlpha.50',
             },
             '&::-webkit-scrollbar': {
-                width: '8px',
+                w: '8px',
             },
             '&::-webkit-scrollbar-track': {
                 background: 'blackAlpha.50',
@@ -57,8 +57,8 @@ const theme = extendTheme({
                 gap: '8px',
                 textTransform: 'none',
                 borderRadius: '4px',
-                padding: '2px 8px',
-                height: '24px',
+                p: '2px 8px',
+                h: '24px',
                 fontWeight: '400',
             },
             variants: {
@@ -67,6 +67,30 @@ const theme = extendTheme({
                 },
                 black: {
                     bg: 'blackAlpha.100',
+                },
+            },
+        },
+        Card: {
+            parts: ['container', 'header', 'body', 'footer'],
+            baseStyle: {
+                borderRadius: '8px',
+                container: {
+                    overflow: 'hidden',
+                    maxW: '320px',
+                },
+            },
+            variants: {
+                withImage: {
+                    header: {
+                        p: '0',
+                    },
+                    body: {
+                        p: '16px 24px',
+                    },
+                    footer: {
+                        p: '24px 24px 20px 24px',
+                        justifyContent: 'space-between',
+                    },
                 },
             },
         },

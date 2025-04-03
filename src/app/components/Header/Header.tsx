@@ -1,10 +1,28 @@
 import { Flex, useMediaQuery } from '@chakra-ui/react';
 
+import BookmarkIcon from '../../assets/icons/bookmark.svg';
+import PeoplesIcon from '../../assets/icons/peoples.svg';
+import SmileIcon from '../../assets/icons/smile.svg';
 import Breadcrumbs from '../common/Breadcrumbs';
-import ProfileStat from '../common/ProfileStat';
+import Statistics from '../common/Statistics';
 import Burger from './Burger';
 import Logo from './Logo';
 import UserProfile from './UserProfile';
+
+const mockProfileStat = [
+    {
+        icon: BookmarkIcon,
+        count: 185,
+    },
+    {
+        icon: PeoplesIcon,
+        count: 589,
+    },
+    {
+        icon: SmileIcon,
+        count: 587,
+    },
+];
 
 const Header = () => {
     const [isDesktop] = useMediaQuery('(min-width: 768px)');
@@ -25,7 +43,7 @@ const Header = () => {
                 <UserProfile />
             ) : (
                 <Flex>
-                    <ProfileStat />
+                    <Statistics data={mockProfileStat} isInHeader={true} />
                     <Burger />
                 </Flex>
             )}

@@ -1,10 +1,18 @@
 import { Badge, Image, Text } from '@chakra-ui/react';
 
-const CustomBadge = ({ variant, icon, text }: { variant: string; icon: string; text: string }) => (
-    <Badge variant={variant}>
-        <Image src={icon} w='16px' />
+import PotIcon from '../../assets/icons/pot.svg';
+
+const mockBadge = {
+    variant: 'lime',
+    icon: PotIcon,
+    text: 'Первые блюда',
+};
+
+const CustomBadge = () => (
+    <Badge variant={mockBadge.variant}>
+        <Image src={mockBadge.icon} w='16px' />
         <Text fontSize='14px' fontWeight='400' lineHeight='20px'>
-            {text}
+            {mockBadge.text}
         </Text>
     </Badge>
 );

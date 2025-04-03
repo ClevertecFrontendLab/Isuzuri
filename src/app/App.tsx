@@ -2,15 +2,11 @@ import './App.css';
 
 import { Flex } from '@chakra-ui/react';
 
-import PotIcon from './assets/icons/pot.svg';
 import CardAvatar from './components/Card/CardAvatar';
+import CustomCard from './components/Card/CustomCard';
 import CustomBadge from './components/common/CustomBadge';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-const mockBadge = {
-    icon: PotIcon,
-    text: 'Первые блюда',
-};
 
 function App() {
     return (
@@ -18,8 +14,9 @@ function App() {
             <Header />
             <Flex>
                 <Sidebar />
-                <CustomBadge variant='lime' icon={mockBadge.icon} text={mockBadge.text} />
+                <CustomBadge />
                 <CardAvatar />
+                <CustomCard />
             </Flex>
         </Flex>
     );
