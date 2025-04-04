@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 import CardAvatar from './components/Card/CardAvatar';
 import CustomCard from './components/Card/CustomCard';
@@ -14,9 +14,11 @@ function App() {
             <Header />
             <Flex>
                 <Sidebar />
-                <CustomBadge />
-                <CardAvatar />
-                <CustomCard />
+                <Box w='900px'>
+                    <CustomBadge />
+                    <CardAvatar />
+                    <CustomCard />
+                </Box>
             </Flex>
         </Flex>
     );

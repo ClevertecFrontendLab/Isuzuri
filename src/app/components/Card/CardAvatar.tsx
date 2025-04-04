@@ -15,7 +15,7 @@ const CardAvatar = () => {
                 w={isDesktop ? '48px' : '40px'}
                 h={isDesktop ? '48px' : '40px'}
             />
-            <Flex direction='column' justifyContent='center'>
+            <Flex direction='column' justifyContent='center' width='100%' maxW='214px'>
                 <Text
                     fontSize={isDesktop ? '18px' : '16px'}
                     overflow='hidden'
