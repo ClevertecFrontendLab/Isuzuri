@@ -79,7 +79,7 @@ const theme = extendTheme({
             },
         },
         Card: {
-            parts: ['container', 'header', 'body', 'footer', 'stack'],
+            parts: ['container', 'header', 'body', 'footer'],
             baseStyle: {
                 borderRadius: '8px',
                 container: {
@@ -87,10 +87,10 @@ const theme = extendTheme({
                     overflow: 'hidden',
                 },
                 header: {
-                    p: '0px',
+                    p: '0px 24px',
                 },
                 body: {
-                    p: '0px',
+                    p: '0px 24px',
                     '& > .chakra-heading': {
                         fontSize: '20px',
                         lineHeight: '28px',
@@ -105,7 +105,7 @@ const theme = extendTheme({
                     },
                 },
                 footer: {
-                    p: '0px',
+                    p: '0px 24px',
                 },
             },
             variants: {
@@ -113,8 +113,8 @@ const theme = extendTheme({
                     container: {
                         maxW: '320px',
                     },
-                    body: {
-                        p: '16px 0px 0px 0px',
+                    header: {
+                        p: '0px',
                     },
                     footer: {
                         justifyContent: 'space-between',
@@ -131,11 +131,15 @@ const theme = extendTheme({
                         },
                     },
                     header: {
+                        p: '0px',
                         display: 'flex',
                         justifyContent: 'space-between',
                     },
-
+                    body: {
+                        p: '0px',
+                    },
                     footer: {
+                        p: '0px',
                         gap: '8px',
                         justifyContent: 'end',
                     },
@@ -144,11 +148,21 @@ const theme = extendTheme({
                     container: {
                         maxW: '320px',
                     },
+                    header: {
+                        paddingTop: '24px',
+                    },
                     body: {
-                        p: '16px 0px 0px 0px',
+                        '& > .chakra-text': {
+                            marginTop: '0px',
+                        },
                     },
                     footer: {
+                        paddingBottom: '20px',
                         gap: '8px',
+                        '& > .chakra-stack': {
+                            flexDirection: 'row',
+                            gap: '6px',
+                        },
                     },
                 },
                 withoutImage: {
@@ -158,8 +172,10 @@ const theme = extendTheme({
                     header: {
                         display: 'flex',
                         justifyContent: 'space-between',
+                        paddingTop: '24px',
                     },
                     footer: {
+                        paddingBottom: '20px',
                         gap: '8px',
                         justifyContent: 'end',
                     },
@@ -172,6 +188,9 @@ const theme = extendTheme({
                             sm: '16px 12px',
                         },
                     },
+                    body: {
+                        p: '0px',
+                    },
                 },
                 withTextAndTag: {
                     container: {
@@ -181,7 +200,11 @@ const theme = extendTheme({
                             sm: '12px',
                         },
                     },
+                    body: {
+                        p: '0px',
+                    },
                     footer: {
+                        p: '0px',
                         display: 'flex',
                         justifyContent: 'space-between',
                     },
@@ -226,6 +249,10 @@ const theme = extendTheme({
                 24: {
                     h: '24px',
                     p: '4px 8px',
+                },
+                32: {
+                    h: '32px',
+                    p: '6px 12px',
                 },
             },
         },

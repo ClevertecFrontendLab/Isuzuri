@@ -31,7 +31,7 @@ const mockCardFooterData = [
 ];
 
 const CustomCard = ({
-    variant = 'withImageUp',
+    variant = 'withTextAndTag',
     coverImage = viewImage,
     title = 'Солянка с грибами',
     description = 'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
@@ -123,11 +123,11 @@ const CardWithUser = ({ description, statistics }: CardProps) => (
             <Text noOfLines={3}>{description}</Text>
         </CardBody>
         <CardFooter>
-            <Stack direction='row' gap='6px'>
-                <Button variant='black' size='xs'>
+            <Stack>
+                <Button variant='black' size='24'>
                     Подписаться
                 </Button>
-                <Button variant='lime' size='xs'>
+                <Button variant='lime' size='24'>
                     Читать
                 </Button>
             </Stack>
@@ -147,8 +147,12 @@ const CardWithoutImage = ({ title, description, statistics }: CardProps) => (
             <Text noOfLines={3}>{description}</Text>
         </CardBody>
         <CardFooter>
-            <Button variant='white'>5</Button>
-            <Button variant='black'>15</Button>
+            <Button variant='white' size='32'>
+                5
+            </Button>
+            <Button variant='black' size='32'>
+                15
+            </Button>
         </CardFooter>
     </>
 );
