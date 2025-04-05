@@ -40,7 +40,11 @@ const CustomCard = ({
     // userRecommendation,
     // actions,
 }: CardProps) => (
-    <Card variant={variant} direction={variant === 'withImageLeft' ? 'row' : 'column'}>
+    <Card
+        variant={variant}
+        direction={variant === 'withImageLeft' ? 'row' : 'column'}
+        borderColor='blackAlpha.150'
+    >
         {variant === 'withImageUp' && (
             <CardWithImageUp
                 coverImage={coverImage}
@@ -72,33 +76,37 @@ const CustomCard = ({
 
 export default CustomCard;
 
-const CardWithImageUp = ({ coverImage, title, description, statistics }: CardProps) => (
-    <>
-        <CardHeader>
-            <Image src={coverImage} w='100%' objectFit='cover' />
+const CardWithImageUp = ({ coverImage, title, description, statistics }: CardProps) => {
+    const [isMobile] = useMediaQuery('(max-width: 768px)');
+
+    return (
+        <>
             <CustomBadge isInCard />
-        </CardHeader>
-        <CardBody>
-            <Heading>{title}</Heading>
-            <Text>{description}</Text>
-        </CardBody>
-        <CardFooter>
-            <CustomBadge placement='top-left' />
-            {statistics && <Statistics data={statistics} />}
-        </CardFooter>
-    </>
-);
+            <CardHeader>
+                <Image src={coverImage} maxW='100%' h='auto' objectFit='cover' />
+            </CardHeader>
+            <CardBody>
+                <Heading>{title}</Heading>
+                {!isMobile && <Text>{description}</Text>}
+            </CardBody>
+            <CardFooter>
+                {!isMobile && <CustomBadge />}
+                {statistics && <Statistics data={statistics} />}
+            </CardFooter>
+        </>
+    );
+};
 
 const CardWithImageLeft = ({ coverImage, title, description, statistics }: CardProps) => {
     const [isMobile] = useMediaQuery('(max-width: 768px)');
 
     return (
         <>
-            <Image src={coverImage} h='100%' objectFit='cover' />
-            <CustomBadge placement='bottom-left' isInCard />
+            <Image src={coverImage} maxW='100%' h='100%' />
+            <CustomBadge isInCard />
             <Stack>
                 <CardHeader>
-                    <CustomBadge />
+                    {!isMobile && <CustomBadge />}
                     {statistics && <Statistics data={statistics} />}
                 </CardHeader>
                 <CardBody>
@@ -177,7 +185,7 @@ const CardWithTextAndTag = ({ title, description, statistics }: CardProps) => (
             </Text>
         </CardBody>
         <CardFooter>
-            <CustomBadge placement='top-left' />
+            <CustomBadge />
             {statistics && <Statistics data={statistics} />}
         </CardFooter>
     </>

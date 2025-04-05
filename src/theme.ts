@@ -5,6 +5,7 @@ const breakpoints = {
     lg: '1440px',
     md: '768px',
     sm: '360px',
+    base: '0px',
 };
 
 const theme = extendTheme({
@@ -19,6 +20,7 @@ const theme = extendTheme({
             800: 'rgba(0, 0, 0, 0.8)',
             600: 'rgba(0, 0, 0, 0.48)',
             200: 'rgba(0, 0, 0, 0.2)',
+            150: 'rgba(0, 0, 0, 0.08)',
             100: 'rgba(0, 0, 0, 0.06)',
             50: 'rgba(0, 0, 0, 0.04)',
         },
@@ -81,22 +83,32 @@ const theme = extendTheme({
         Card: {
             parts: ['container', 'header', 'body', 'footer'],
             baseStyle: {
-                borderRadius: '8px',
                 container: {
-                    gap: '24px',
+                    gap: {
+                        base: '8px',
+                        md: '24px',
+                    },
                     overflow: 'hidden',
+                    border: '1px solid',
+                    borderRadius: '8px',
                 },
                 header: {
-                    p: '0px 24px',
+                    p: {
+                        base: '0px 8px',
+                        md: '0px 24px',
+                    },
                 },
                 body: {
-                    p: '0px 24px',
+                    gap: '8px',
+                    p: {
+                        base: '0px 8px',
+                        md: '0px 24px',
+                    },
                     '& > .chakra-heading': {
                         fontSize: '20px',
                         lineHeight: '28px',
                     },
                     '& > .chakra-text': {
-                        marginTop: '8px',
                         fontSize: '14px',
                         lineHeight: '20px',
                         fontWeight: '400',
@@ -105,27 +117,57 @@ const theme = extendTheme({
                     },
                 },
                 footer: {
-                    p: '0px 24px',
+                    p: {
+                        base: '0px 8px',
+                        md: '0px 24px',
+                    },
                 },
             },
             variants: {
                 withImageUp: {
                     container: {
                         maxW: '320px',
+                        '& > .chakra-badge': {
+                            top: {
+                                base: '8px',
+                                md: '24px',
+                            },
+                            left: {
+                                base: '8px',
+                                md: '24px',
+                            },
+                        },
                     },
                     header: {
                         p: '0px',
                     },
                     footer: {
+                        paddingBottom: {
+                            base: '8px',
+                            md: '20px',
+                        },
                         justifyContent: 'space-between',
                     },
                 },
                 withImageLeft: {
                     container: {
                         maxW: '668px',
-                        maxH: '244px',
                         gap: '0px',
                         p: '0px',
+                        '& > .chakra-badge': {
+                            top: {
+                                base: '8px',
+                                md: 'auto',
+                            },
+                            bottom: {
+                                base: 'auto',
+                                md: '20px',
+                            },
+                            left: {
+                                base: '8px',
+                                md: '20px',
+                            },
+                        },
                         '& > .chakra-stack': {
                             p: '20px 24px',
                         },
@@ -147,17 +189,27 @@ const theme = extendTheme({
                 withUser: {
                     container: {
                         maxW: '320px',
+                        gap: '0px',
                     },
                     header: {
-                        paddingTop: '24px',
+                        p: {
+                            base: '24px 16px 8px 16px',
+                            md: '24px 24px 16px 24px',
+                        },
                     },
                     body: {
-                        '& > .chakra-text': {
-                            marginTop: '0px',
+                        mt: '12px',
+                        p: {
+                            base: '0px 16px',
+                            md: '0px 24px',
                         },
                     },
                     footer: {
-                        paddingBottom: '20px',
+                        mt: '24px',
+                        p: {
+                            base: '0px 16px 16px 16px',
+                            md: '0px 24px 20px 24px',
+                        },
                         gap: '8px',
                         '& > .chakra-stack': {
                             flexDirection: 'row',
@@ -195,6 +247,7 @@ const theme = extendTheme({
                 withTextAndTag: {
                     container: {
                         maxW: '320px',
+                        gap: '24px',
                         p: {
                             md: '24px 24px 20px 24px',
                             sm: '12px',
