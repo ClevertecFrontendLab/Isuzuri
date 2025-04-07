@@ -1,11 +1,20 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
-import React from 'react';
 
 import writeIcon from '../../assets/icons/write.svg';
 
 const FloatButton = () => (
-    <Flex direction='column' alignItems='center' justifyContent='center'>
+    <Flex
+        position='sticky'
+        bottom='0'
+        right='0'
+        direction='column'
+        alignItems='center'
+        justifyContent='center'
+        w='208px'
+        h='208px'
+        marginLeft='auto'
+    >
         <Box position='relative' width='48px' height='48px'>
             <Box
                 position='absolute'

@@ -11,10 +11,11 @@ const Statistics = ({
 
     return (
         <Flex
+            p={!isDesktop && isInHeader ? '0px 16px' : '0px'}
             alignItems='center'
             justifyItems='center'
-            direction={isDesktop && isInHeader ? 'column' : 'row'}
-            gap={isDesktop && isInHeader ? '24px' : '0px'}
+            direction={!isDesktop && isInHeader ? 'row' : 'column'}
+            gap={!isDesktop && isInHeader ? '0px' : '32px'}
         >
             {data.map((item) => (
                 <Flex
@@ -25,7 +26,11 @@ const Statistics = ({
                     justifyItems='center'
                 >
                     <Image src={item.icon} />
-                    <Text color='lime.dark' fontSize='12px' fontWeight='600'>
+                    <Text
+                        color='lime.dark'
+                        fontSize={isInHeader ? '12px' : '16px'}
+                        fontWeight='600'
+                    >
                         {item.count}
                     </Text>
                 </Flex>
