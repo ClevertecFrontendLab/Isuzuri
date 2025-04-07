@@ -1,4 +1,5 @@
 import {
+    Box,
     Button,
     Card,
     CardBody,
@@ -33,7 +34,7 @@ const mockCardFooterData = [
 const CustomCard = ({
     variant = 'withTextAndTag',
     coverImage = viewImage,
-    title = 'Солянка с грибами',
+    title = 'Солянка с грибами и баклажанами',
     description = 'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
     // badge,
     statistics = mockCardFooterData,
@@ -82,8 +83,10 @@ const CardWithImageUp = ({ coverImage, title, description, statistics }: CardPro
     return (
         <>
             <CustomBadge isInCard />
-            <CardHeader>
-                <Image src={coverImage} maxW='100%' h='auto' objectFit='cover' />
+            <CardHeader p={0}>
+                <Box w='100%' h={isMobile ? '128px' : '50%'}>
+                    <Image src={coverImage} w='100%' h='100%' objectFit='cover' />
+                </Box>
             </CardHeader>
             <CardBody>
                 <Heading>{title}</Heading>
@@ -102,20 +105,26 @@ const CardWithImageLeft = ({ coverImage, title, description, statistics }: CardP
 
     return (
         <>
-            <Image src={coverImage} maxW='100%' h='100%' />
+            <Box flex='1' maxW='50%'>
+                <Image src={coverImage} w='100%' h='100%' objectFit='cover' />
+            </Box>
             <CustomBadge isInCard />
-            <Stack>
+            <Stack flex='1' maxW='50%'>
                 <CardHeader>
                     {!isMobile && <CustomBadge />}
                     {statistics && <Statistics data={statistics} />}
                 </CardHeader>
                 <CardBody>
-                    <Heading>{title}</Heading>
+                    <Heading noOfLines={isMobile ? 2 : 1}>{title}</Heading>
                     {!isMobile && <Text noOfLines={3}>{description}</Text>}
                 </CardBody>
                 <CardFooter>
-                    <Button variant='white'>5</Button>
-                    <Button variant='black'>15</Button>
+                    <Button variant='white' size={isMobile ? '24' : '32'}>
+                        5
+                    </Button>
+                    <Button variant='black' size={isMobile ? '24' : '32'}>
+                        15
+                    </Button>
                 </CardFooter>
             </Stack>
         </>
