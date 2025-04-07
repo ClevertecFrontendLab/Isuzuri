@@ -23,16 +23,12 @@ const SidebarItem = ({
     activeChild: string;
     setActiveChild: (child: string) => void;
 }) => (
-    <AccordionItem
-        key={item.label}
-        onClick={() => setActiveItem(item.label === activeItem ? '' : item.label)}
-        border='none'
-    >
+    <AccordionItem key={item.label} border='none'>
         <AccordionButton
             p='12px 8px'
             bgColor={activeItem === item.label ? 'lime.light' : 'white'}
             cursor='pointer'
-            _hover={{ bgColor: 'lime.50' }}
+            onClick={() => setActiveItem(item.label === activeItem ? '' : item.label)}
         >
             <Image src={item.icon} />
             <Box as='span' flex='1' textAlign='left' margin='auto 12px'>
