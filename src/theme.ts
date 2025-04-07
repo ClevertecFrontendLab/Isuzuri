@@ -10,6 +10,9 @@ const breakpoints = {
 
 const theme = extendTheme({
     breakpoints,
+    fonts: {
+        body: 'Inter, sans-serif',
+    },
     colors: {
         white: '#ffffff',
         whiteAlpha: {
@@ -42,6 +45,12 @@ const theme = extendTheme({
     },
     styles: {
         global: {
+            body: {
+                lineHeight: '1.5',
+                fontSize: '16px',
+                fontWeight: 500,
+                boxSizing: 'border-box',
+            },
             '*': {
                 scrollbarWidth: 'thin',
                 scrollbarColor: 'blackAlpha.300 blackAlpha.50',

@@ -11,6 +11,6 @@ export type CardProps = {
     description?: string;
     badge?: string;
     statistics?: { icon: string; count: number }[];
-    userRecommendation?: boolean;
+    userRecommendation?: { avatar: string; name: string };
     actions?: boolean;
 };

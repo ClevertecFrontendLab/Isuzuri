@@ -12,7 +12,7 @@ const SidebarCategories = () => {
         <Accordion
             allowToggle
             p='10px 16px 10px 10px'
-            overflowY='scroll'
+            overflowY='auto'
             boxShadow={activeItem && '0px 2px 4px -1px #0000000F, 0px 4px 6px -1px #0000001A'}
             borderBottomRadius={activeItem && '12px'}
         >

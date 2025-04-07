@@ -23,7 +23,11 @@ const SidebarItem = ({
     activeChild: string;
     setActiveChild: (child: string) => void;
 }) => (
-    <AccordionItem key={item.label} onClick={() => setActiveItem(item.label)} border='none'>
+    <AccordionItem
+        key={item.label}
+        onClick={() => setActiveItem(item.label === activeItem ? '' : item.label)}
+        border='none'
+    >
         <AccordionButton
             p='12px 8px'
             bgColor={activeItem === item.label ? 'lime.light' : 'white'}
