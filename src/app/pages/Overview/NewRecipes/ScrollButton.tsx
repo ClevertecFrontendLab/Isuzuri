@@ -1,5 +1,4 @@
 import { Button, Image } from '@chakra-ui/react';
-import React from 'react';
 
 import ArrowRightIcon from '../../../assets/icons/arrow_right.svg';
 
@@ -15,7 +14,8 @@ const ScrollButton = ({
         h='48px'
         bgColor='black'
         position='absolute'
-        left='-8px'
+        left={direction === 'left' ? '-8px' : 'auto'}
+        right={direction === 'right' ? '-8px' : 'auto'}
         top='30%'
         zIndex='1'
         onClick={onClick}
@@ -25,7 +25,7 @@ const ScrollButton = ({
             src={ArrowRightIcon}
             w='24px'
             h='24px'
-            transform={direction === 'right' ? 'rotate(180deg)' : ''}
+            transform={direction === 'left' ? 'rotate(180deg)' : ''}
         />
     </Button>
 );

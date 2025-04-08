@@ -98,6 +98,8 @@ const theme = extendTheme({
             parts: ['container', 'header', 'body', 'footer'],
             baseStyle: {
                 container: {
+                    w: '100%',
+                    flex: '0 0 auto',
                     gap: {
                         base: '8px',
                         md: '24px',
