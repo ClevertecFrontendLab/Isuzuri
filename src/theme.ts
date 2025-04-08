@@ -21,6 +21,7 @@ const theme = extendTheme({
         blackAlpha: {
             900: 'rgba(0, 0, 0, 0.92)',
             800: 'rgba(0, 0, 0, 0.8)',
+            700: 'rgba(0, 0, 0, 0.64)',
             600: 'rgba(0, 0, 0, 0.48)',
             200: 'rgba(0, 0, 0, 0.2)',
             150: 'rgba(0, 0, 0, 0.08)',
@@ -32,6 +33,7 @@ const theme = extendTheme({
             dark: '#2db100',
             main: '#c4ff61',
             yellow: '#ffffd3',
+            800: '#134b00',
             600: 'rgba(45, 177, 0, 1)',
             300: 'rgba(0, 0, 0, 0.16)',
             150: '#d7ff94',
@@ -46,10 +48,13 @@ const theme = extendTheme({
     styles: {
         global: {
             body: {
+                m: 0,
+                p: 0,
                 lineHeight: '1.5',
                 fontSize: '16px',
                 fontWeight: 500,
                 boxSizing: 'border-box',
+                overflowX: 'hidden',
             },
             '*': {
                 scrollbarWidth: 'thin',
@@ -348,6 +353,18 @@ const theme = extendTheme({
                 32: {
                     h: '32px',
                     p: '6px 12px',
+                },
+            },
+        },
+        Input: {
+            parts: ['field'],
+            variants: {
+                outline: {
+                    field: {
+                        _placeholder: {
+                            color: 'lime.800',
+                        },
+                    },
                 },
             },
         },

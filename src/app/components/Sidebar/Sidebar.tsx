@@ -9,7 +9,8 @@ const Sidebar = () => (
         direction='column'
         justifyContent='space-between'
         h='calc(100vh - 80px)'
-        w='256px'
+        minW='256px'
+        maxW='256px'
         p='24px 0 32px 0'
     >
         <SidebarCategories />

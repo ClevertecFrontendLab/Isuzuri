@@ -25,7 +25,7 @@ const mockProfileStat = [
 ];
 
 const Header = () => {
-    const [isDesktop] = useMediaQuery('(min-width: 768px)');
+    const [isDesktop] = useMediaQuery('(min-width: 1440px)');
 
     return (
         <Flex
@@ -43,7 +43,7 @@ const Header = () => {
                 <UserProfile />
             ) : (
                 <Flex>
-                    <Statistics data={mockProfileStat} isInHeader={true} />
+                    <Statistics data={mockProfileStat} isRow={true} />
                     <Burger />
                 </Flex>
             )}

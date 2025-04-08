@@ -4,12 +4,14 @@ import LogoutIcon from '../../assets/icons/door-out.svg';
 
 const SidebarExitButton = () => (
     <Button
-        variant='ghost'
+        variant='unstyled'
+        display='flex'
+        p='0px'
         leftIcon={<Image src={LogoutIcon} margin='2px 6px 2px 0' />}
         bgColor='transparent'
         border='none'
     >
-        <Text fontSize='12px' fontWeight='bold'>
+        <Text fontSize='12px' fontWeight='600' lineHeight='133%'>
             Выйти
         </Text>
     </Button>

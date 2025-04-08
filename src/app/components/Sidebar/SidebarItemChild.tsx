@@ -12,6 +12,7 @@ const SidebarItemChild = ({
     <Box
         key={child}
         padding='6px 8px'
+        bgColor={activeChild === child ? 'lime.light' : 'white'}
         onClick={() => setActiveChild(child)}
         cursor='pointer'
         _hover={{ bgColor: 'lime.50' }}

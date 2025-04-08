@@ -36,11 +36,13 @@ const CustomCard = ({
     coverImage = viewImage,
     title = 'Солянка с грибами и баклажанами',
     description = 'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
-    // badge,
+    badge,
     statistics = mockCardFooterData,
     // userRecommendation ,
 }: CardProps) => (
     <Card
+        w='100%'
+        flex='0 0 auto'
         variant={variant}
         direction={variant === 'withImageLeft' ? 'row' : 'column'}
         borderColor='blackAlpha.150'
@@ -51,6 +53,7 @@ const CustomCard = ({
                 title={title}
                 description={description}
                 statistics={statistics}
+                badge={badge}
             />
         )}
         {variant === 'withImageLeft' && (
@@ -76,30 +79,30 @@ const CustomCard = ({
 
 export default CustomCard;
 
-const CardWithImageUp = ({ coverImage, title, description, statistics }: CardProps) => {
+const CardWithImageUp = ({ coverImage, title, description, statistics, badge }: CardProps) => {
     const [isMobile] = useMediaQuery('(max-width: 768px)');
 
     return (
         <>
-            <CustomBadge isInCard />
+            {badge && isMobile && <CustomBadge icon={badge.icon} text={badge.text} isInCard />}
             <CardHeader p={0}>
-                <Box w='100%' h={isMobile ? '128px' : '50%'}>
+                <Box w='100%' h={isMobile ? '128px' : '100%'}>
                     <Image src={coverImage} w='100%' h='100%' objectFit='cover' />
                 </Box>
             </CardHeader>
             <CardBody>
-                <Heading>{title}</Heading>
-                {!isMobile && <Text>{description}</Text>}
+                <Heading noOfLines={isMobile ? 2 : 1}>{title}</Heading>
+                {!isMobile && <Text noOfLines={3}>{description}</Text>}
             </CardBody>
             <CardFooter>
-                {!isMobile && <CustomBadge />}
-                {statistics && <Statistics data={statistics} />}
+                {!isMobile && badge && <CustomBadge icon={badge.icon} text={badge.text} />}
+                {statistics && <Statistics data={statistics} isRow />}
             </CardFooter>
         </>
     );
 };
 
-const CardWithImageLeft = ({ coverImage, title, description, statistics }: CardProps) => {
+const CardWithImageLeft = ({ coverImage, title, description, statistics, badge }: CardProps) => {
     const [isMobile] = useMediaQuery('(max-width: 768px)');
 
     return (
@@ -107,10 +110,10 @@ const CardWithImageLeft = ({ coverImage, title, description, statistics }: CardP
             <Box flex='1' maxW='50%'>
                 <Image src={coverImage} w='100%' h='100%' objectFit='cover' />
             </Box>
-            <CustomBadge isInCard />
+            {badge && <CustomBadge icon={badge.icon} text={badge.text} isInCard />}
             <Stack flex='1' maxW='50%'>
                 <CardHeader>
-                    {!isMobile && <CustomBadge />}
+                    {!isMobile && badge && <CustomBadge icon={badge.icon} text={badge.text} />}
                     {statistics && <Statistics data={statistics} />}
                 </CardHeader>
                 <CardBody>
@@ -152,10 +155,10 @@ const CardWithUser = ({ description, statistics }: CardProps) => (
     </>
 );
 
-const CardWithoutImage = ({ title, description, statistics }: CardProps) => (
+const CardWithoutImage = ({ title, description, statistics, badge }: CardProps) => (
     <>
         <CardHeader>
-            <CustomBadge />
+            {badge && <CustomBadge icon={badge.icon} text={badge.text} isInCard />}
             {statistics && <Statistics data={statistics} />}
         </CardHeader>
         <CardBody>
@@ -184,7 +187,7 @@ const CardWithText = ({ title, description }: CardProps) => (
     </CardBody>
 );
 
-const CardWithTextAndTag = ({ title, description, statistics }: CardProps) => (
+const CardWithTextAndTag = ({ title, description, statistics, badge }: CardProps) => (
     <>
         <CardBody>
             <Heading>{title}</Heading>
@@ -193,7 +196,7 @@ const CardWithTextAndTag = ({ title, description, statistics }: CardProps) => (
             </Text>
         </CardBody>
         <CardFooter>
-            <CustomBadge />
+            {badge && <CustomBadge icon={badge.icon} text={badge.text} isInCard />}
             {statistics && <Statistics data={statistics} />}
         </CardFooter>
     </>

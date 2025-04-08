@@ -12,11 +12,11 @@ const MobileMenu = () => (
         bottom='0'
         left='0'
         right='0'
+        h='84px'
         alignItems='center'
         justifyContent='space-around'
         boxShadow='0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 20px 25px -5px rgba(0, 0, 0, 0.1)'
         background='lime.50'
-        height='84px'
     >
         <MobileMenuItem icon={HomeIcon} title='Главная' isActive />
         <MobileMenuItem icon={SearchIcon} title='Поиск' />

@@ -25,13 +25,14 @@ const SidebarItem = ({
 }) => (
     <AccordionItem key={item.label} border='none'>
         <AccordionButton
+            gap='12px'
             p='12px 8px'
             bgColor={activeItem === item.label ? 'lime.light' : 'white'}
             cursor='pointer'
             onClick={() => setActiveItem(item.label === activeItem ? '' : item.label)}
         >
             <Image src={item.icon} />
-            <Box as='span' flex='1' textAlign='left' margin='auto 12px'>
+            <Box as='span' flex='1' textAlign='left'>
                 <Text fontSize='16px' fontWeight={activeItem === item.label ? '700' : '500'}>
                     {item.label}
                 </Text>

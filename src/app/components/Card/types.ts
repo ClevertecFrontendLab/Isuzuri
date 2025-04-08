@@ -9,7 +9,7 @@ export type CardProps = {
     coverImage?: string;
     title?: string;
     description?: string;
-    badge?: string;
+    badge?: { icon: string; text: string };
     statistics?: { icon: string; count: number }[];
     userRecommendation?: { avatar: string; name: string };
     actions?: boolean;
