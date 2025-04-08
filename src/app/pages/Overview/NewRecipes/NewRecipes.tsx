@@ -151,7 +151,7 @@ const NewRecipes = () => {
                     }}
                 >
                     {mockCardData.map((item) => (
-                        <CustomCard variant='withImageUp' {...item} />
+                        <CustomCard variant='withImageLeft' {...item} />
                     ))}
                 </Flex>
                 {isDesktop && <ScrollButton direction='right' onClick={() => scroll('right')} />}

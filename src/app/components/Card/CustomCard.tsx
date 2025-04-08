@@ -2,6 +2,7 @@ import { Card } from '@chakra-ui/react';
 
 import BookmarkIcon from '../../assets/icons/bookmark.svg';
 import SmileIcon from '../../assets/icons/smile.svg';
+import alex from '../../assets/images/alex.png';
 import viewImage from '../../assets/images/view.png';
 import WithImageLeft from './CardVariants/WithImageLeft';
 import WithImageUp from './CardVariants/WithImageUp';
@@ -29,7 +30,10 @@ const CustomCard = ({
     description = 'Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.',
     badge,
     statistics = mockCardFooterData,
-    // userRecommendation ,
+    userRecommendation = {
+        avatar: alex,
+        name: 'Alex Cook',
+    },
 }: CardProps) => {
     const getCardComponent = (variant: string) => {
         switch (variant) {
@@ -41,6 +45,7 @@ const CustomCard = ({
                         description={description}
                         statistics={statistics}
                         badge={badge}
+                        userRecommendation={userRecommendation}
                     />
                 );
 
@@ -51,6 +56,8 @@ const CustomCard = ({
                         title={title}
                         description={description}
                         statistics={statistics}
+                        badge={badge}
+                        userRecommendation={userRecommendation}
                     />
                 );
 

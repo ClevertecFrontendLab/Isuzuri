@@ -5,7 +5,14 @@ import CustomBadge from '../../common/CustomBadge';
 import Statistics from '../../common/Statistics';
 import { CardProps } from '../types';
 
-const WithImageLeft = ({ coverImage, title, description, statistics, badge }: CardProps) => {
+const WithImageLeft = ({
+    coverImage,
+    title,
+    description,
+    statistics,
+    badge,
+    userRecommendation,
+}: CardProps) => {
     const [isMobile] = useMediaQuery('(max-width: 768px)');
 
     return (
@@ -13,7 +20,14 @@ const WithImageLeft = ({ coverImage, title, description, statistics, badge }: Ca
             <Box flex='1' maxW='50%'>
                 <Image src={coverImage} w='100%' h='100%' objectFit='cover' />
             </Box>
-            {badge && <CustomBadge icon={badge.icon} text={badge.text} isInCard />}
+            {!isMobile && userRecommendation && (
+                <CustomBadge
+                    icon={userRecommendation.avatar}
+                    text={userRecommendation.name + ' рекомендует'}
+                    isInCard
+                />
+            )}
+            {isMobile && badge && <CustomBadge icon={badge.icon} text={badge.text} isInCard />}
             <Stack flex='1' maxW='50%'>
                 <CardHeader>
                     {!isMobile && badge && <CustomBadge icon={badge.icon} text={badge.text} />}
